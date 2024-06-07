@@ -169,7 +169,7 @@ async def handle_messages(service, user_id, messages):
                 ]
             )
         else:
-            print(f'Ignore email from {message["From"].get("email")} to {message["To"]}')
+            print(f'Ignore email from {message["From"].get("email")} to {message.get("To", "")}')
     return result
 
 
