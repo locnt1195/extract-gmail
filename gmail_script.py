@@ -127,7 +127,7 @@ async def main():
                 page_token = response['nextPageToken']
 
                 response = (
-                    service.users().messages().list(userId=user_id, pageToken=page_token, maxResults=maxResults).execute()
+                    service.users().messages().list(userId=user_id, pageToken=page_token, labelIds=label["id"], maxResults=maxResults).execute()
                 )
 
                 data.extend(await handle_messages(service, user_id, response['messages']))
